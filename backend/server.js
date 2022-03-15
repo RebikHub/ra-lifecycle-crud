@@ -3,19 +3,18 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const cors = require('koa2-cors');
 const koaBody = require('koa-body');
-
+const router = new Router();
 const app = new Koa();
 
 app.use(cors());
 app.use(koaBody({json: true}));
 
-const notes = [];
+const notes = ['1','2'];
 let nextId = 1;
 
-const router = new Router();
-
 router.get('/notes', async (ctx, next) => {
-    ctx.response.body = notes;
+    ctx.response.body = JSON.stringify(notes);
+    console.log(notes);
 });
 
 router.post('/notes', async(ctx, next) => {
