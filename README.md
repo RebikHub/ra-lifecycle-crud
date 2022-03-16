@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/l9m5h6itql986v9h/branch/master?svg=true)](https://ci.appveyor.com/project/RebikHub/ra-lifecycle-crud/branch/master)
 
 [CRUD](https://rebikhub.github.io/ra-lifecycle-crud/)
 
