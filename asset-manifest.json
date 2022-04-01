@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ra-lifecycle-crud/static/css/main.0cbc00ce.css",
+    "main.js": "/ra-lifecycle-crud/static/js/main.2a7f3d70.js",
+    "index.html": "/ra-lifecycle-crud/index.html",
+    "main.0cbc00ce.css.map": "/ra-lifecycle-crud/static/css/main.0cbc00ce.css.map",
+    "main.2a7f3d70.js.map": "/ra-lifecycle-crud/static/js/main.2a7f3d70.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0cbc00ce.css",
+    "static/js/main.2a7f3d70.js"
+  ]
+}
