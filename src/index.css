@@ -6,17 +6,17 @@
   width: 900px;
   margin: 20px auto;
 }
-.notes {
 
-}
 .notes-head {
   display: flex;
 }
+
 .notes-title {
   font-weight: bold;
   font-size: xx-large;
   margin-right: 30px;
 }
+
 .notes-update {
   width: 32px;
   height: 32px;
@@ -25,10 +25,13 @@
   background-image: url(../image/update.png);
   cursor: pointer;
 }
+
 .notes-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 10px 0;
 }
+
 .note {
   position: relative;
   border: 1px solid black;
@@ -36,10 +39,12 @@
   margin-right: 25px;
   margin-bottom: 25px;
 }
+
 .note-text {
   padding: 30px;
   margin-right: 20px;
 }
+
 .note-remove {
   position: absolute;
   top: -18px;
@@ -52,19 +57,23 @@
   background-color: white;
   cursor: pointer;
 }
+
 .new-note {
   position: relative;
 }
+
 .new-note-title {
   margin: 10px 0;
   font-size: initial;
 }
+
 .new-note-text {
   width: 400px;
   height: 120px;
   padding: 3px;
   resize: none;
 }
+
 .new-note-btn {
   position: absolute;
   top: 110px;

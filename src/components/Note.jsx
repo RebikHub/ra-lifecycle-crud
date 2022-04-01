@@ -1,10 +1,13 @@
 import React from 'react'
 
-export default function Note({text, id, handleRemove}) {
-  return (
-    <div className="note">
-      <p className="note-text">{text}</p>
-      <span className="note-remove" onClick={() => handleRemove(id)}></span>
-    </div>
-  )
-}
+export default class Note extends React.Component {
+  render() {
+    return (
+      <div className="note">
+        <p className="note-text">{this.props.text}</p>
+        <span className="note-remove"
+          onClick={() => this.props.handleRemove(this.props.id)}></span>
+      </div>
+    );
+  };
+};
