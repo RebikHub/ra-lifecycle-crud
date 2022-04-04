@@ -6,10 +6,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: [],
-      textNote: null,
-      idNote: null,
-      update: false
+      notes: []
     };
   };
 
@@ -29,6 +26,7 @@ export default class App extends React.Component {
       method: 'POST',
       body: JSON.stringify(text)
     })
+    .then(() => this.fetchGetData())
     .catch((error) => console.log(error))
   };
 
@@ -36,68 +34,24 @@ export default class App extends React.Component {
     fetch(process.env.REACT_APP_SERVER + id, {
       method: 'DELETE',
     })
+    .then(() => this.fetchGetData())
     .catch((error) => console.log(error))
   };
 
   handleSend = (text) => {
-    this.setState({
-      textNote: text
-    });
+    this.fetchPostData(text);
   };
 
   handleRemove = (id) => {
-    this.setState({
-      idNote: id
-    });
+    this.fetchDeleteData(id);
   };
 
   handleUpdate = () => {
-    this.setState({
-      update: true
-    });
+    this.fetchGetData();
   };
 
   componentDidMount() {
     this.fetchGetData();
-  };
-
-  componentDidUpdate() {
-
-    if (this.state.textNote !== null) {
-      this.fetchPostData(this.state.textNote);
-      this.fetchGetData();
-      this.setState({
-        textNote: null
-      });
-    };
-
-    if (this.state.idNote !== null) {
-      const id = this.state.idNote;
-      this.fetchDeleteData(this.state.idNote);
-      this.setState((state) => {
-        return {
-          notes: state.notes.filter((el) => el.id !== id),
-          idNote: null
-        };
-      });
-    };
-
-    if (this.state.update) {
-      this.fetchGetData();
-      this.setState({
-        update: false
-      });
-    };
-  };
-
-  componentWillUnmount() {
-    console.log('unmount');
-    this.setState({
-      notes: [],
-      textNote: null,
-      idNote: null,
-      update: false
-    });
   };
 
   render() {
