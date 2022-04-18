@@ -5,13 +5,20 @@ export default class NoteForm extends React.Component {
     super(props);
     this.state = {
       text: ''
-    }
-  }
+    };
+  };
 
   handleInput = (ev) => {
     this.setState({
       text: ev.target.value
-    })
+    });
+  };
+
+  handleSend = () => {
+    this.props.handleSend(this.state.text);
+    this.setState({
+      text: ''
+    });
   };
 
   render() {
@@ -22,12 +29,7 @@ export default class NoteForm extends React.Component {
           value={this.state.text}
           onChange={this.handleInput}></textarea>
         <button type="button" className="new-note-btn"
-          onClick={() => {
-              this.props.handleSend(this.state.text)
-              this.setState({
-                text: ''
-              })
-            }}></button>
+          onClick={this.handleSend}></button>
       </form>
     );
   };
